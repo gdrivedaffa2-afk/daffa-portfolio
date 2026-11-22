@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daffa-fairuzya-portfolio-refined.spicybook22.chatgpt.site/sitemap.xml
