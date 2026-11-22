@@ -1,0 +1,31 @@
+/* Keep the complete frame; the reference's portrait crops are intentionally removed. */
+.tile,.tile[data-shape="square"],.tile[data-shape="portrait"]{width:74%;max-width:215px}
+.tile .tile-media{width:100%;aspect-ratio:16/9;background:#f6f6f6;overflow:hidden}
+.tile img,.tile[data-shape="square"] img,.tile[data-shape="portrait"] img,.tile video,.archive-card img,.project-cover img,.project-film>video,.next-project img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.tile img{height:100%;filter:none!important}.tile video{height:100%;object-fit:contain}
+.crosshair{display:none}.gallery-cell{will-change:auto}.gallery-cells{will-change:transform}
+.tile figure{position:relative}.tile:focus-visible{outline-offset:8px}
+.frame-mark,.frame-tick,.frame-dim{position:absolute;pointer-events:none;opacity:0;transition:opacity .18s ease,transform .25s cubic-bezier(.2,.7,.2,1)}
+.frame-mark{width:10px;height:10px;border:0 solid #111;transform:scale(.65)}
+.frame-mark.top-left{top:-6px;left:-6px;border-top-width:1px;border-left-width:1px;transform-origin:top left}
+.frame-mark.top-right{top:-6px;right:-6px;border-top-width:1px;border-right-width:1px;transform-origin:top right}
+.frame-mark.bottom-left{bottom:-6px;left:-6px;border-bottom-width:1px;border-left-width:1px;transform-origin:bottom left}
+.frame-mark.bottom-right{bottom:-6px;right:-6px;border-bottom-width:1px;border-right-width:1px;transform-origin:bottom right}
+.frame-tick{width:5px;height:1px;background:#111;top:50%;transform:translateY(-50%) scaleX(0)}
+.tick-left{left:-11px}.tick-right{right:-11px}
+.frame-dim{left:50%;top:calc(100% + 12px);transform:translate(-50%,-3px);font-size:10px;line-height:1;color:#777;letter-spacing:-.2px;white-space:nowrap}
+.tile.is-hovered .frame-mark,.tile:focus-visible .frame-mark{opacity:1;transform:scale(1)}
+.tile.is-hovered .frame-tick{opacity:1;transform:translateY(-50%) scaleX(1)}
+.tile.is-hovered .frame-dim,.tile:focus-visible .frame-dim{opacity:1;transform:translate(-50%,0)}
+.tile figcaption{transition:color .2s ease}.tile.is-hovered figcaption{color:#111}
+.motion-pointer{position:fixed;left:0;top:0;z-index:100;pointer-events:none;opacity:0;mix-blend-mode:difference;color:#fff;transition:opacity .12s ease;will-change:transform}
+.motion-pointer.is-visible{opacity:1}.pointer-cross{position:absolute;width:16px;height:16px;left:-8px;top:-8px;transition:transform .18s ease}
+.pointer-cross::before,.pointer-cross::after{position:absolute;content:'';background:#fff}
+.pointer-cross::before{left:0;top:7.5px;width:16px;height:1px}.pointer-cross::after{left:7.5px;top:0;width:1px;height:16px}
+.pointer-label{position:absolute;left:17px;top:-4px;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:10px;letter-spacing:-.45px;line-height:1;white-space:nowrap;opacity:0;transform:translateX(-4px);transition:opacity .16s ease,transform .2s ease}
+.motion-pointer.is-project .pointer-label{opacity:1;transform:none}.motion-pointer.is-project .pointer-cross{transform:scale(.8)}
+.motion-pointer.is-ui .pointer-cross{transform:scale(.65)}.motion-pointer.is-dragging .pointer-cross{transform:scale(.7) rotate(45deg)}.motion-pointer.is-dragging .pointer-label{opacity:0}
+@media(hover:hover) and (pointer:fine){.has-motion-pointer,.has-motion-pointer a,.has-motion-pointer button,.has-motion-pointer .gallery-board,.has-motion-pointer .tile,.has-motion-pointer .gallery-board.is-dragging a{cursor:none}}
+@media(max-width:600px){.tile,.tile[data-shape="square"],.tile[data-shape="portrait"]{width:76%;max-width:none}.frame-dim{font-size:10px}}
+@media(hover:none),(pointer:coarse){.motion-pointer{display:none}.frame-mark,.frame-tick,.frame-dim{display:none}}
+@media(prefers-reduced-motion:reduce){.motion-pointer,.pointer-cross,.pointer-label,.frame-mark,.frame-tick,.frame-dim{transition:none}.motion-pointer.is-dragging .pointer-cross{transform:scale(.7)}}

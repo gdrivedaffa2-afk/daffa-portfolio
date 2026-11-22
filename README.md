@@ -11,8 +11,8 @@ GitHub repository Settings → Pages → Deploy from a branch → main → / (ro
 ## Edit
 
 - Gallery data: js-gallery-data.js
-- Styles: css-loum.css
-- Gallery interaction: js-gallery.js
+- Styles: css-loum.css + css-gallery-motion.css
+- Gallery interaction: js-gallery-motion.js
 - Navigation, clock and original players: js-loum.js
 - Pages: individual HTML files
 
