@@ -1,9 +1,83 @@
-/* Keep the complete frame; the reference's portrait crops are intentionally removed. */
-.masthead{mix-blend-mode:normal}
-.manifesto{background:#fff;color:#111;border:1px solid #e5e5e5;border-radius:4px;padding:10px 14px;max-width:420px;line-height:1.08;box-shadow:0 3px 12px rgba(0,0,0,.035)}
-.coordinate{top:106px}
-@media(max-width:900px){.manifesto{max-width:320px;padding:10px 12px;line-height:1.08}.coordinate{top:110px}}
-@media(max-width:600px){.manifesto{max-width:230px;padding:8px 10px;line-height:1.12}.coordinate{top:96px}}
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400..600&family=Space+Grotesk:wght@600..700&display=swap");
+
+/* Typography system and readable header panels. */
+:root {
+  --font-display: "Space Grotesk", Arial, sans-serif;
+  --font-body: Inter, Arial, sans-serif;
+  --font-label: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-body);
+}
+
+.masthead {
+  gap: 12px;
+  mix-blend-mode: normal;
+}
+
+.masthead .wordmark,
+.masthead .manifesto {
+  min-width: 0;
+  background: #fff;
+  color: #111;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 10px 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .035);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+
+.masthead .wordmark {
+  flex: 0 0 auto;
+  font-size: clamp(14px, 1.2vw, 19px);
+}
+
+.wordmark-name { display: block; }
+.masthead .manifesto { max-width: 420px; }
+.coordinate { top: 106px; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.project-heading h1, .film-header h2 { font-weight: 700; }
+
+.project-description > p, .project-notes ul, .about-statement {
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
+.dock a, .dock button, .view-toggle, .text-link, .load-original,
+.collection-files summary, .about-columns a, .contact-email {
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.tile figcaption, .archive-card figcaption, .archive-heading > span,
+.section-label, .project-facts, .project-cover figcaption, .frame-dim,
+.film-header > span, .next-project > p, .coordinate, .speed,
+.local-time, .panel-eyebrow, .about-columns h3 {
+  font-family: var(--font-label);
+  font-weight: 500;
+  letter-spacing: normal;
+}
+
+@media (max-width: 900px) {
+  .masthead .manifesto { max-width: 320px; }
+  .coordinate { top: 110px; }
+}
+
+@media (max-width: 600px) {
+  .masthead { gap: 8px; }
+  .masthead .wordmark, .masthead .manifesto { padding: 8px 9px; }
+  .masthead .wordmark { max-width: 42%; }
+  .masthead .manifesto { max-width: min(230px, 56%); }
+  .coordinate { top: 112px; }
+}
+
 .tile,.tile[data-shape="square"],.tile[data-shape="portrait"]{width:74%;max-width:215px}
 .tile .tile-media{width:100%;aspect-ratio:16/9;background:#f6f6f6;overflow:hidden}
 .tile img,.tile[data-shape="square"] img,.tile[data-shape="portrait"] img,.tile video,.archive-card img,.project-cover img,.project-film>video,.next-project img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
