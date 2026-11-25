@@ -1,4 +1,9 @@
 /* Keep the complete frame; the reference's portrait crops are intentionally removed. */
+.masthead{mix-blend-mode:normal}
+.manifesto{background:#fff;color:#111;border:1px solid #e5e5e5;border-radius:4px;padding:10px 14px;max-width:420px;line-height:1.08;box-shadow:0 3px 12px rgba(0,0,0,.035)}
+.coordinate{top:106px}
+@media(max-width:900px){.manifesto{max-width:320px;padding:10px 12px;line-height:1.08}.coordinate{top:110px}}
+@media(max-width:600px){.manifesto{max-width:230px;padding:8px 10px;line-height:1.12}.coordinate{top:96px}}
 .tile,.tile[data-shape="square"],.tile[data-shape="portrait"]{width:74%;max-width:215px}
 .tile .tile-media{width:100%;aspect-ratio:16/9;background:#f6f6f6;overflow:hidden}
 .tile img,.tile[data-shape="square"] img,.tile[data-shape="portrait"] img,.tile video,.archive-card img,.project-cover img,.project-film>video,.next-project img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
